@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    include:
+      - secrets
+  datasource:
+    url: ${db.url:}
+    username: ${db.username}
+    password: ${db.password}
+  mustache:
+    servlet:
+      expose-request-attributes: true
+      allow-session-override: true
+      allow-request-override: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: ${facebook.client-id}
+            client-secret: ${facebook.client-secret}
+        provider:
+          facebook:
+            user-name-attribute: email
+
+server:
+  forward-headers-strategy: framework
