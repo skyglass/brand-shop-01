@@ -2,26 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
-		<artifactId>video-parent</artifactId>
-		<groupId>net.greeta.video</groupId>
+		<artifactId>stock-parent</artifactId>
+		<groupId>net.greeta.stock</groupId>
 		<version>1.1</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>video-service</artifactId>
+	<artifactId>shop-service</artifactId>
 
 	<properties>
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>net.greeta.video</groupId>
-			<artifactId>rest</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>net.greeta.video</groupId>
-			<artifactId>security</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -41,8 +32,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mustache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-tracing-bridge-brave</artifactId>
@@ -62,6 +58,20 @@
 			<groupId>io.opentelemetry.javaagent</groupId>
 			<artifactId>opentelemetry-javaagent</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.paypal.checkout.sdk/checkout-sdk -->
+		<dependency>
+			<groupId>com.paypal.sdk</groupId>
+			<artifactId>checkout-sdk</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.paypal.sdk/payouts-sdk -->
+		<dependency>
+			<groupId>com.paypal.sdk</groupId>
+			<artifactId>payouts-sdk</artifactId>
+			<version>1.1.1</version>
 		</dependency>
 
 		<!-- SpringDoc OpenApi -->
@@ -120,6 +130,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>net.sourceforge.htmlunit</groupId>
+			<artifactId>htmlunit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-inline</artifactId>

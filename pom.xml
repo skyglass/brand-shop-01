@@ -27,11 +27,8 @@
 
     <modules>
         <module>common-domain</module>
-        <module>customer-service</module>
-        <module>inventory-service</module>
-        <module>order-service</module>
+        <module>shop-service</module>
         <module>gateway-service</module>
-        <module>e2e-service</module>
     </modules>
 
     <dependencyManagement>
